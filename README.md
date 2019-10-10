@@ -2,6 +2,6 @@
 
 # dh-cypress-tests
 
-More fun with Cypress, specifically for Daily Harvest's Home and Login page
+More fun with Cypress, specifically for testing Daily Harvest's Login page
 
-See site: https://www.daily-harvest.com
+See site: https://www.daily-harvest.com/login
