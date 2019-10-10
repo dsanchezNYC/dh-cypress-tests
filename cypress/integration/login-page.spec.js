@@ -12,6 +12,16 @@ describe('Login Page smoke test', () => {
         lp.navigateToLoginPage()
     })
     
+    it('Login page loads successfully', () => {
+        lp.loginTitleVisible()
+        lp.emailFieldEnabled()
+        lp.loginTitleVisible()
+        lp.passwordFieldEnabled()
+        lp.passwordTextVisible()
+    })
+
     
+
+
 
 })
