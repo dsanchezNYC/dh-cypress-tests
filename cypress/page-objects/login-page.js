@@ -1,6 +1,7 @@
 export class LoginPage {
 
     navigateToLoginPage(){
+        cy.viewport(1440,900)
         cy.visit('https://www.daily-harvest.com/login')
     }
 
