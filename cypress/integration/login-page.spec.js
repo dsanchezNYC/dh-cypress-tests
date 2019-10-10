@@ -3,6 +3,7 @@
 import { HomePage } from "../page-objects/home-page"
 import { LoginPage } from "../page-objects/login-page"
 import { PasswordReset } from "../page-objects/password-reset"
+import { SignUpPage } from "../page-objects/sign-up-page"
 
 describe('Login Page smoke test', () => {
 
@@ -38,7 +39,7 @@ describe('Login Page smoke test', () => {
     })
 
     it('Login page Remember Me checkbox loads successfully', () => {
-        lp.rememberMeCheckboxVisibleAndNotEnabled()
+        lp.rememberMeCheckboxVisibleAndNotChecked()
     })
 
     it('Login page Forgot your password link loads successfully', () => {
@@ -60,6 +61,7 @@ describe('Login Page functional test', () => {
     const hp = new HomePage
     const lp = new LoginPage
     const pr = new PasswordReset
+    const su = new SignUpPage
 
     beforeEach(() => {
         hp.navigateToHomePage()
@@ -67,10 +69,28 @@ describe('Login Page functional test', () => {
         lp.navigateToLoginPage()
     })
 
-    it('User can navigate to Forgot Password successfully', () => {
+    it('User can navigate to Home page successfully', () => {
+        lp.loginTitleClick()
+        hp.dailyHarvestLogoVisible()
+    })
+
+    it('User can check and uncheck Remember Me box successfully', () => {
+        lp.rememberMeCheckboxCheck()
+        lp.rememberMeCheckboxVisibleAndChecked()
+        lp.rememberMeCheckboxUncheck()
+        lp.rememberMeCheckboxVisibleAndNotChecked()
+    })
+
+    it('User can navigate to Forgot Password page successfully', () => {
         lp.forgotPasswordLinkClick()
         pr.passwordResetTitleVisible()
         pr.passwordResetDescriptionVisibe()
+    })
+
+    it('User can navigate to Sign Up page successfully', () => {
+        lp.signUpClick()
+        su.signUpTitleVisible()
+        su.signUpTitleVisible()
     })
 
 })

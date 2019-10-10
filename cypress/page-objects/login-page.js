@@ -8,6 +8,10 @@ export class LoginPage {
     loginTitleVisible(){
         cy.get('.my-5', {timeout: 30000}).should('be.visible')
     }
+
+    loginTitleClick(){
+        cy.get('.px-32 > svg').click()
+    }
     
     emailAddressTextVisible(){
         cy.get(':nth-child(2) > label').should('have.text', 'Email Address')
@@ -33,9 +37,22 @@ export class LoginPage {
         cy.get('[data-cy=login-btn]').should('be.visible')
     }
 
-    rememberMeCheckboxVisibleAndNotEnabled(){
+    rememberMeCheckboxVisibleAndNotChecked(){
         cy.get('label > span').should('be.visible')
-        cy.get('label > span').should('not.be.enabled')
+        cy.get('#remember').should('not.be.checked')
+    }
+
+    rememberMeCheckboxVisibleAndChecked(){
+        cy.get('label > span').should('be.visible')
+        cy.get('#remember').should('be.checked')
+    }
+
+    rememberMeCheckboxCheck(){
+        cy.get('#remember').check()
+    }
+
+    rememberMeCheckboxUncheck(){
+        cy.get('#remember').uncheck()
     }
 
     forgotPasswordLinkVisible(){
@@ -51,4 +68,7 @@ export class LoginPage {
         cy.get('.text-center > .acc-text').should('be.visible')
     }
 
+    signUpClick(){
+        cy.get('.text-center > .acc-text').click()
+    }
 }
