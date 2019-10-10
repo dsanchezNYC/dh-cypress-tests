@@ -8,11 +8,12 @@ describe('Home Page smoke test', () => {
     const hp = new HomePage
     const lp = new LoginPage
 
-    beforeEach(() => {
-        hp.navigateToHomePage()
-    })
+    // beforeEach(() => {
+    //     hp.navigateToHomePage()
+    // })
 
     it('Home page loads successfully', () => {
+        hp.navigateToHomePage()
         hp.dailyHarvestLogoVisible()
         hp.dailyHarvestDescriptionVisible()
     })
