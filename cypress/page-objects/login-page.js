@@ -38,4 +38,13 @@ export class LoginPage {
         cy.get('label > span').should('not.be.enabled')
     }
 
+    forgotPasswordLinkVisible(){
+        cy.get('.pw_reset').should('be.visible')
+    }
+
+    signUpTextandLinkVisible(){
+        cy.get('.login > .text-center').should('have.text', 'Don\'t have an account? Sign Up.')
+        cy.get('.text-center > .acc-text').should('be.visible')
+    }
+
 }

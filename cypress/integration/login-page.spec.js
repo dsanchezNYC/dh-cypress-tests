@@ -8,12 +8,18 @@ describe('Login Page smoke test', () => {
     const hp = new HomePage
     const lp = new LoginPage
 
-    beforeEach(() => {
+    // beforeEach(() => {
+    //     hp.navigateToHomePage()
+    //     hp.loginLinkVisible()
+    //     lp.navigateToLoginPage()
+    // })
+    
+    it('Navigate to Login Page from home page successfully', () => {
         hp.navigateToHomePage()
         hp.loginLinkVisible()
         lp.navigateToLoginPage()
     })
-    
+
     it('Login page Title loads successfully', () => {
         lp.loginTitleVisible()
     })
@@ -32,6 +38,14 @@ describe('Login Page smoke test', () => {
 
     it('Login page Remember Me checkbox loads successfully', () => {
         lp.rememberMeCheckboxVisibleAndNotEnabled()
+    })
+
+    it('Login page Forgot your password link loads successfully', () => {
+        lp.forgotPasswordLinkVisible()
+    })
+
+    it('Login page Sign Up text and link loads successfully', () => {
+        lp.signUpTextandLinkVisible()
     })
 
 })
