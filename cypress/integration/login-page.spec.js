@@ -14,10 +14,10 @@ describe('Login Page smoke test', () => {
     //     lp.navigateToLoginPage()
     // })
     
-    it('Navigate to Login Page from home page successfully', () => {
-        hp.navigateToHomePage()
-        hp.loginLinkVisible()
-        lp.navigateToLoginPage()
+    it('Navigate to Login page from Home page', () => {
+         hp.navigateToHomePage()
+         hp.loginLinkVisible()
+         lp.navigateToLoginPage()
     })
 
     it('Login page Title loads successfully', () => {
