@@ -25,5 +25,17 @@ export class LoginPage {
         cy.get('#password').should('be.enabled')
     }
 
+    clickloginButton(){
+        cy.get('[data-cy=login-btn]').click()
+    }
+
+    loginButtonVisible(){
+        cy.get('[data-cy=login-btn]').should('be.visible')
+    }
+
+    rememberMeCheckboxEnabled(){
+        cy.get('label > span').should('be.visible')
+        cy.get('label > span').should('not.be.enabled')
+    }
 
 }

@@ -12,22 +12,24 @@ describe('Login Page smoke test', () => {
         lp.navigateToLoginPage()
     })
     
-    it('Login page loads successfully', () => {
+    it('Login page Title loads successfully', () => {
         lp.loginTitleVisible()
+    })
+
+    it('Login page Email title and field loads successfully', () => {
         lp.emailFieldEnabled()
         lp.loginTitleVisible()
         lp.passwordFieldEnabled()
         lp.passwordTextVisible()
     })
 
-    // it('Login with no email address/password credentials', () => {
+    it('Login page Password title and field loads successfully', () => {
+        lp.passwordFieldEnabled()
+        lp.passwordTextVisible()
+    })
 
-    // })
-
-
-
-
-
-
+    it('Login page Remember Me checkbox loads successfully', () => {
+        lp.rememberMeCheckboxEnabled()
+    })
 
 })
