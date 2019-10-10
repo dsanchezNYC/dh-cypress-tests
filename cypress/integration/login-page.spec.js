@@ -2,6 +2,7 @@
 
 import { HomePage } from "../page-objects/home-page"
 import { LoginPage } from "../page-objects/login-page"
+import { PasswordReset } from "../page-objects/password-reset"
 
 describe('Login Page smoke test', () => {
 
@@ -44,8 +45,32 @@ describe('Login Page smoke test', () => {
         lp.forgotPasswordLinkVisible()
     })
 
+    it('Login page Login button loads successfully', () => {
+        lp.loginButtonVisible()
+    })
+
     it('Login page Sign Up text and link loads successfully', () => {
         lp.signUpTextandLinkVisible()
+    })
+
+})
+
+describe('Login Page functional test', () => {
+    
+    const hp = new HomePage
+    const lp = new LoginPage
+    const pr = new PasswordReset
+
+    beforeEach(() => {
+        hp.navigateToHomePage()
+        hp.loginLinkVisible()
+        lp.navigateToLoginPage()
+    })
+
+    it('User can navigate to Forgot Password successfully', () => {
+        lp.forgotPasswordLinkClick()
+        pr.passwordResetTitleVisible()
+        pr.passwordResetDescriptionVisibe()
     })
 
 })

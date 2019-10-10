@@ -42,6 +42,10 @@ export class LoginPage {
         cy.get('.pw_reset').should('be.visible')
     }
 
+    forgotPasswordLinkClick(){
+        cy.get('.pw_reset').click()
+    }
+
     signUpTextandLinkVisible(){
         cy.get('.login > .text-center').should('have.text', 'Don\'t have an account? Sign Up.')
         cy.get('.text-center > .acc-text').should('be.visible')
