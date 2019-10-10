@@ -9,6 +9,8 @@ describe('Login Page smoke test', () => {
     const lp = new LoginPage
 
     beforeEach(() => {
+        hp.navigateToHomePage()
+        hp.loginLinkVisible()
         lp.navigateToLoginPage()
     })
     
@@ -29,7 +31,7 @@ describe('Login Page smoke test', () => {
     })
 
     it('Login page Remember Me checkbox loads successfully', () => {
-        lp.rememberMeCheckboxEnabled()
+        lp.rememberMeCheckboxVisibleAndNotEnabled()
     })
 
 })

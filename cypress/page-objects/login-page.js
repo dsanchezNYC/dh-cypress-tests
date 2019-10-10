@@ -33,7 +33,7 @@ export class LoginPage {
         cy.get('[data-cy=login-btn]').should('be.visible')
     }
 
-    rememberMeCheckboxEnabled(){
+    rememberMeCheckboxVisibleAndNotEnabled(){
         cy.get('label > span').should('be.visible')
         cy.get('label > span').should('not.be.enabled')
     }
