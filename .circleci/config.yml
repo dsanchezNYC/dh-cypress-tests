@@ -12,7 +12,7 @@ workflows:
     jobs:
       - cypress/run: # "run" job comes from "cypress" orb
           executor: cypress/browsers-chrome69
-          browser: chrome
+          browser: chrome 
       
   nightly: 
     triggers:
