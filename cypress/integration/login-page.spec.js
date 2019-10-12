@@ -2,6 +2,8 @@
 
 import { HomePage } from "../page-objects/home-page"
 import { LoginPage } from "../page-objects/login-page"
+import { PwResetPage } from "../page-objects/pw-reset-page"
+import { SignUpPage } from "../page-objects/sign-up-page"
 
 describe('Login Page tests', () => {
 
@@ -46,44 +48,33 @@ describe('Login Page tests', () => {
         lp.signUpLink().should('be.visible')
     })
 
-// })
+})
 
-// describe('Login Page functional test', () => {
+describe('Login Page functional test', () => {
     
-//     const hp = new HomePage
-//     const lp = new LoginPage
-//     const pr = new PasswordReset
-//     const su = new SignUpPage
+    const lp = new LoginPage
+    const pwrp = new PwResetPage
+    const sup = new SignUpPage
 
-//     beforeEach(() => {
-//         hp.navigateToHomePage()
-//         hp.loginLinkVisible()
-//         lp.navigateToLoginPage()
-//     })
+    beforeEach(() => {
+        hp.visitHomePage()
+        cy.wait(2000)
+        hp.loginHeaderLink().should('be.visible').click()
+        lp.dailyHarvestLogo().should('be.visible')
+    })
 
-//     it('User can navigate to Home page successfully', () => {
-//         lp.loginTitleClick()
-//         hp.dailyHarvestLogoVisible()
-//     })
+    it('User can navigate to Forgot Password page successfully', () => {
+        lp.forgotYourPasswordLink().should('be.visible').click()
+        pwrp.passwordResetTitle().should('be.visible').should('have.text', 'Password Reset')
+        pwrp.passwordResetDescription().should('be.visible').should('have.text', 'Enter your email address, and we will send you password reset instructions.')
+        
+    })
 
-//     it('User can check and uncheck Remember Me box successfully', () => {
-//         lp.rememberMeCheckboxCheck()
-//         lp.rememberMeCheckboxVisibleAndChecked()
-//         lp.rememberMeCheckboxUncheck()
-//         lp.rememberMeCheckboxVisibleAndNotChecked()
-//     })
-
-//     it('User can navigate to Forgot Password page successfully', () => {
-//         lp.forgotPasswordLinkClick()
-//         pr.passwordResetTitleVisible()
-//         pr.passwordResetDescriptionVisibe()
-//     })
-
-//     it('User can navigate to Sign Up page successfully', () => {
-//         lp.signUpClick()
-//         su.signUpTitleVisible()
-//         su.signUpTitleVisible()
-    // })
+    it('User can navigate to Sign Up page successfully', () => {
+        lp.signUpLink().should('be.visible').click()
+        sup.signUpPageTitle().should('be.visible').should('have.text', 'WE TAKE CARE OF FOOD, SO FOOD CAN TAKE CARE OF YOU')
+        sup.signUpPageDescription().should('be.visible').should('have.text', 'Find out if we deliver to your zip code')
+    })
 
 })
 
