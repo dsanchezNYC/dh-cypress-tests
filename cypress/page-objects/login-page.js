@@ -1,74 +1,59 @@
 export class LoginPage {
 
-    navigateToLoginPage(){
+    visitLoginPage(){
         cy.viewport(1440,900)
         cy.visit('https://www.daily-harvest.com/login')
     }
 
-    loginTitleVisible(){
-        cy.get('.my-5', {timeout: 30000}).should('be.visible')
+    hamburgerMenu(){
+        return cy.get('.p-0 > .d-flex > svg')
     }
 
-    loginTitleClick(){
-        cy.get('.px-32 > svg').click()
-    }
-    
-    emailAddressTextVisible(){
-        cy.get(':nth-child(2) > label').should('have.text', 'Email Address')
+    dailyHarvestLogo(){
+        return cy.get('.my-5')
     }
 
-    emailFieldEnabled(){
-        cy.get('#email').should('be.enabled')
+    loginTitle(){
+        return cy.get('.secondary-nav').contains('Login')
     }
 
-    passwordTextVisible(){
-        cy.get(':nth-child(3) > label').should('have.text', 'Password')
+    emailAddressText(){
+        return cy.get(':nth-child(2) > label')
     }
 
-    passwordFieldEnabled(){
-        cy.get('#password').should('be.enabled')
+    emailAddressField(){
+        return cy.get('#email')
     }
 
-    clickloginButton(){
-        cy.get('[data-cy=login-btn]').click()
+    passwordText(){
+        return cy.get(':nth-child(3) > label')
     }
 
-    loginButtonVisible(){
-        cy.get('[data-cy=login-btn]').should('be.visible')
+    passwordField(){
+        return cy.get('#password')
     }
 
-    rememberMeCheckboxVisibleAndNotChecked(){
-        cy.get('label > span').should('be.visible')
-        cy.get('#remember').should('not.be.checked')
+    rememberMeCheckbox(){
+        return cy.get('#remember')
     }
 
-    rememberMeCheckboxVisibleAndChecked(){
-        cy.get('label > span').should('be.visible')
-        cy.get('#remember').should('be.checked')
+    rememberMeText(){
+        return cy.get('label > span')
     }
 
-    rememberMeCheckboxCheck(){
-        cy.get('#remember').check()
+    forgotYourPasswordLink(){
+        return cy.get('.pw_reset')
     }
 
-    rememberMeCheckboxUncheck(){
-        cy.get('#remember').uncheck()
+    loginButton(){
+        return cy.get('[data-cy=login-btn]')
     }
 
-    forgotPasswordLinkVisible(){
-        cy.get('.pw_reset').should('be.visible')
+    signUpText(){
+        return cy.get('.login > .text-center')
     }
 
-    forgotPasswordLinkClick(){
-        cy.get('.pw_reset').click()
-    }
-
-    signUpTextandLinkVisible(){
-        cy.get('.login > .text-center').should('have.text', 'Don\'t have an account? Sign Up.')
-        cy.get('.text-center > .acc-text').should('be.visible')
-    }
-
-    signUpClick(){
-        cy.get('.text-center > .acc-text').click()
+    signUpLink(){
+        return cy.get('.text-center > .acc-text')
     }
 }

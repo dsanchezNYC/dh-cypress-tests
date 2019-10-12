@@ -1,24 +1,21 @@
 export class HomePage {
 
-    navigateToHomePage(){
+    visitHomePage(){
         cy.viewport(1440,900)
+        cy.clearCookie('session-id')
         cy.visit('https://www.daily-harvest.com/')
     }
 
-    dailyHarvestLogoVisible(){
-        cy.get('.px-32 > svg').should('be.visible')
+    dailyHarvestLogo(){
+        return cy.get('.px-32 > svg')
     } 
 
-    dailyHarvestDescriptionVisible(){
-        cy.get('.display-1').should('be.visible')
+    dailyHarvestDescription(){
+        return cy.get('.display-1')
     }
 
-    loginLinkVisible(){
-        cy.get('.secondary-nav > :nth-child(2) > .text-nowrap > span').should('be.visible')
-    }
-
-    loginLinkClick(){
-        cy.get('.secondary-nav > :nth-child(2) > .text-nowrap > span').click()
+    loginHeaderLink(){
+        return cy.get('.secondary-nav').contains('Login')
     }
 
 }
