@@ -50,7 +50,7 @@ describe('Login Page tests', () => {
 
 })
 
-describe('Login Page functional test', () => {
+describe('Functional tests', () => {
     
     const lp = new LoginPage
     const pwrp = new PwResetPage
@@ -75,6 +75,11 @@ describe('Login Page functional test', () => {
         sup.signUpPageTitle().should('be.visible').should('have.text', 'WE TAKE CARE OF FOOD, SO FOOD CAN TAKE CARE OF YOU')
         sup.signUpPageDescription().should('be.visible').should('have.text', 'Find out if we deliver to your zip code')
     })
+
+    // it('User sees error message for invalid credentials', () => {
+    //     lp.loginButton().should('be.visible').click()
+    //     cy.get('flash-notifications').should('contain', ' Error: Invalid login credentials. ')
+    // })
 
 })
 
