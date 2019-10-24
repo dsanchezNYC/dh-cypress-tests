@@ -5,6 +5,66 @@ export class LoginPage {
         cy.visit('https://www.daily-harvest.com/login')
     }
 
+    primaryNavBrowse(){
+        return cy.get('.primary-nav').contains('Browse')
+    }
+
+    primaryNavAll(){
+        return cy.get('.primary-nav').contains('All')
+    }
+
+    primaryNavSmoothies(){
+        return cy.get('.primary-nav').contains('Smoothies')
+    }
+
+    primaryNavHarvestBowls(){
+        return cy.get('.primary-nav').contains('Harvest Bowls')
+    }
+
+    primaryNavSoups(){
+        return cy.get('.primary-nav').contains('Soups')
+    }
+
+    primaryNavBites(){
+        return cy.get('.primary-nav').contains('Bites')
+    }
+
+    primaryNavOatBowls(){
+        return cy.get('.primary-nav').contains('Oat Bowls')
+    }
+
+    primaryNavChiaBowls(){
+        return cy.get('.primary-nav').contains('Chia Bowls')
+    }
+
+    primaryNavLattes(){
+        return cy.get('.primary-nav').contains('Lattes')
+    }
+
+    ourStoryLink(){
+        return cy.get('.primary-nav').contains('Our Story')
+    }
+
+    giftsLink(){
+        return cy.get('.primary-nav').contains('Gifts')
+    }
+    
+    dailyHarvestLogo(){
+        return cy.get('.px-32 > svg')
+    } 
+
+    helpLink(){
+        return cy.get('.secondary-nav').contains('Help')
+    }
+
+    loginHeaderLink(){
+        return cy.get('.secondary-nav').contains('Login')
+    }
+
+    getStartedLink(){
+        return cy.get('.secondary-nav').contains('Get Started')
+    }
+
     hamburgerMenu(){
         return cy.get('.p-0 > .d-flex > svg')
     }

@@ -12,11 +12,17 @@ describe('Login Page tests', () => {
     
     describe('Smoke tests', () => {
 
-    it('Navigate to Login page from Home page successfully', () => {
-         hp.visitHomePage()
-         cy.wait(2000)
-         hp.loginHeaderLink().should('be.visible').click()
-         lp.dailyHarvestLogo().should('be.visible')
+    it('Login page displayed successfully', () => {
+        lp.visitLoginPage()
+        lp.primaryNavBrowse().should('be.visible')
+        lp.primaryNavAll().should('not.be.visible')
+        lp.primaryNavSmoothies().should('not.be.visible')
+        lp.primaryNavHarvestBowls().should('not.be.visible')
+        lp.primaryNavSoups().should('not.be.visible')
+        lp.primaryNavBites().should('not.be.visible')
+        lp.primaryNavOatBowls().should('not.be.visible')
+        lp.primaryNavChiaBowls().should('not.be.visible')
+        lp.primaryNavLattes().should('not.be.visible')
     })
 
     it('Title loads successfully', () => {
@@ -50,7 +56,7 @@ describe('Login Page tests', () => {
 
 })
 
-describe('Functional tests', () => {
+describe('Navigation tests', () => {
     
     const lp = new LoginPage
     const pwrp = new PwResetPage

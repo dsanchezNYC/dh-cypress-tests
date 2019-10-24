@@ -6,8 +6,8 @@ import { HelpPage } from "../page-objects/help-page"
 describe('Help Page tests', () => {
 
     const hp = new HelpPage
-    
-    describe('Smoke tests', () => {})
+
+    describe('Smoke tests', () => {
 
     it('Help page displayed successfully', () => {
         hp.visitHelpPage()
@@ -20,4 +20,11 @@ describe('Help Page tests', () => {
         hp.navRightLogin().should('be.visible')
         hp.navRightGetStarted().should('be.visible')
    })
+
+   it('Ask a queston search feature loads successfully', () => {
+        hp.searchInput().should('be.visible')
+        hp.searchButton().should('be.visible')
+   })
+
+})
 })

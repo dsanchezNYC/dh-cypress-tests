@@ -39,7 +39,14 @@ export class HelpPage {
         return cy.get('.nav-right').contains('Get Started')
     }
 
+    searchInput(){
+        return cy.get('#searchInput')
+    }
 
+    searchButton(){
+        return cy.get('.dh-search-form-submit')
+    }
+    
 
 
    
