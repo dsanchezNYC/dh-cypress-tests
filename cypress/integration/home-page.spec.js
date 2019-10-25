@@ -13,7 +13,6 @@ describe('Home Page tests', () => {
 
     it('Home page displayed successfully', () => {
         hp.visitHomePage()
-        //cy.wait(2000)
         hp.loginHeaderLink().should('be.visible')
         hp.primaryNavBrowse().should('be.visible')
         hp.primaryNavAll().should('not.be.visible')

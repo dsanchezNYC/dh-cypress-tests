@@ -11,7 +11,6 @@ describe('Help Page tests', () => {
 
     it('Help page displayed successfully', () => {
         hp.visitHelpPage()
-        //cy.wait(2000)
         hp.navLeftBrowse().should('be.visible')
         hp.navLeftWhoWeAre().should('be.visible')
         hp.navLeftGifts().should('be.visible')
