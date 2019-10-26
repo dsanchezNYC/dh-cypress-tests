@@ -14,15 +14,15 @@ describe('Login Page tests', () => {
 
     it('Login page displayed successfully', () => {
         lp.visitLoginPage()
-        lp.primaryNavBrowse().should('be.visible')
-        lp.primaryNavAll().should('not.be.visible')
-        lp.primaryNavSmoothies().should('not.be.visible')
-        lp.primaryNavHarvestBowls().should('not.be.visible')
-        lp.primaryNavSoups().should('not.be.visible')
-        lp.primaryNavBites().should('not.be.visible')
-        lp.primaryNavOatBowls().should('not.be.visible')
-        lp.primaryNavChiaBowls().should('not.be.visible')
-        lp.primaryNavLattes().should('not.be.visible')
+        lp.browseLink().should('be.visible')
+        lp.allLink().should('not.be.visible')
+        lp.smoothiesLink().should('not.be.visible')
+        lp.harvestBowlsLink().should('not.be.visible')
+        lp.soupsLink().should('not.be.visible')
+        lp.bitesLink().should('not.be.visible')
+        lp.oatBowlsLink().should('not.be.visible')
+        lp.chiaBowlsLink().should('not.be.visible')
+        lp.lattesLink().should('not.be.visible')
     })
 
     it('Title loads successfully', () => {
@@ -65,7 +65,7 @@ describe('Navigation tests', () => {
     beforeEach(() => {
         hp.visitHomePage()
         cy.wait(2000)
-        hp.loginHeaderLink().should('be.visible').click()
+        hp.loginLink().should('be.visible').click()
         lp.dailyHarvestLogo().should('be.visible')
     })
 

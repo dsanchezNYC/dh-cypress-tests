@@ -11,13 +11,13 @@ describe('Help Page tests', () => {
 
     it('Help page displayed successfully', () => {
         hp.visitHelpPage()
-        hp.navLeftBrowse().should('be.visible')
-        hp.navLeftWhoWeAre().should('be.visible')
-        hp.navLeftGifts().should('be.visible')
+        hp.browseLink().should('be.visible')
+        hp.whoWeAreLink().should('be.visible')
+        hp.giftsLink().should('be.visible')
         hp.dailyHarvestLogo().should('be.visible')
-        hp.navRightHelp().should('be.visible')
-        hp.navRightLogin().should('be.visible')
-        hp.navRightGetStarted().should('be.visible')
+        hp.helpLink().should('be.visible')
+        hp.loginLink().should('be.visible')
+        hp.getStartedLink().should('be.visible')
    })
 
    it('Ask a queston search feature loads successfully', () => {

@@ -19,6 +19,4 @@ export class PwResetPage{
     sendPasswordResetInstructionsButton(){
         return cy.get('.button')
     }
-
-
 }

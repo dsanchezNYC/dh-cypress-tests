@@ -11,15 +11,15 @@ export class HelpPage {
         // See workarounds via https://docs.cypress.io/examples/examples/recipes.html#Testing-the-DOM
     }
 
-    navLeftBrowse(){
+    browseLink(){
         return cy.get('.nav-left').contains('Browse')
     }
 
-    navLeftWhoWeAre(){
+    whoWeAreLink(){
         return cy.get('.nav-left').contains('Who We Are')
     }
 
-    navLeftGifts(){
+    giftsLink(){
         return cy.get('.nav-left').contains('Gifts')
     }
 
@@ -27,15 +27,15 @@ export class HelpPage {
         return cy.get('.dh-nav-logo')
     }
 
-    navRightHelp(){
+    helpLink(){
         return cy.get('.nav-right').contains('Help')
     }
 
-    navRightLogin(){
+    loginLink(){
         return cy.get('.nav-right').contains('Login')
     }
 
-    navRightGetStarted(){
+    getStartedLink(){
         return cy.get('.nav-right').contains('Get Started')
     }
 
@@ -46,8 +46,5 @@ export class HelpPage {
     searchButton(){
         return cy.get('.dh-search-form-submit')
     }
-    
-
-
    
 }

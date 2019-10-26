@@ -6,39 +6,39 @@ export class HomePage {
         cy.visit('https://www.daily-harvest.com/')
     }
 
-    primaryNavBrowse(){
+    browseLink(){
         return cy.get('.primary-nav').contains('Browse')
     }
 
-    primaryNavAll(){
+    allLink(){
         return cy.get('.primary-nav').contains('All')
     }
 
-    primaryNavSmoothies(){
+    smoothiesLink(){
         return cy.get('.primary-nav').contains('Smoothies')
     }
 
-    primaryNavHarvestBowls(){
+    harvestBowlsLink(){
         return cy.get('.primary-nav').contains('Harvest Bowls')
     }
 
-    primaryNavSoups(){
+    soupsLink(){
         return cy.get('.primary-nav').contains('Soups')
     }
 
-    primaryNavBites(){
+    bitesLink(){
         return cy.get('.primary-nav').contains('Bites')
     }
 
-    primaryNavOatBowls(){
+    oatBowlsLink(){
         return cy.get('.primary-nav').contains('Oat Bowls')
     }
 
-    primaryNavChiaBowls(){
+    chiaBowlsLink(){
         return cy.get('.primary-nav').contains('Chia Bowls')
     }
 
-    primaryNavLattes(){
+    lattesLink(){
         return cy.get('.primary-nav').contains('Lattes')
     }
 
@@ -58,7 +58,7 @@ export class HomePage {
         return cy.get('.display-1')
     }
 
-    loginHeaderLink(){
+    loginLink(){
         return cy.get('.secondary-nav').contains('Login')
     }
 
@@ -69,7 +69,5 @@ export class HomePage {
     getStartedLink(){
         return cy.get('.secondary-nav').contains('Get Started')
     }
-
-
 
 }
