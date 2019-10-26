@@ -2,48 +2,48 @@ export class NavigationLinks {
 
     // Add locators for standard navigation links for .primary-nav .secondary-nav
     // Instead of having same locators in different page objects
-
-    primaryNavBrowse(){
+    
+    browseLink(){
         return cy.get('.primary-nav').contains('Browse')
     }
 
-    primaryNavAll(){
+    allLink(){
         return cy.get('.primary-nav').contains('All')
     }
 
-    primaryNavSmoothies(){
+    smoothiesLink(){
         return cy.get('.primary-nav').contains('Smoothies')
     }
 
-    primaryNavHarvestBowls(){
+    harvestBowlsLink(){
         return cy.get('.primary-nav').contains('Harvest Bowls')
     }
 
-    primaryNavSoups(){
+    soupsLink(){
         return cy.get('.primary-nav').contains('Soups')
     }
 
-    primaryNavBites(){
+    bitesLink(){
         return cy.get('.primary-nav').contains('Bites')
     }
 
-    primaryNavOatBowls(){
+    oatBowlsLink(){
         return cy.get('.primary-nav').contains('Oat Bowls')
     }
 
-    primaryNavChiaBowls(){
+    chiaBowlsLink(){
         return cy.get('.primary-nav').contains('Chia Bowls')
     }
 
-    primaryNavLattes(){
+    lattesLink(){
         return cy.get('.primary-nav').contains('Lattes')
     }
 
-    primaryNavOurStoryLink(){
+    ourStoryLink(){
         return cy.get('.primary-nav').contains('Our Story')
     }
 
-    primaryNavGiftsLink(){
+    giftsLink(){
         return cy.get('.primary-nav').contains('Gifts')
     }
     
@@ -55,16 +55,18 @@ export class NavigationLinks {
         return cy.get('.display-1')
     }
 
-    secondaryNavLoginHeaderLink(){
+    loginLink(){
         return cy.get('.secondary-nav').contains('Login')
     }
 
-    secondaryNavHelpLink(){
+    helpLink(){
         return cy.get('.secondary-nav').contains('Help')
     }
 
-    secondaryNavGetStartedLink(){
+    getStartedLink(){
         return cy.get('.secondary-nav').contains('Get Started')
     }
+
+
 
 }

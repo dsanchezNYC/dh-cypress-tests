@@ -7,7 +7,7 @@ export class HomePage {
     }
 
     browseLink(){
-        return cy.get('.primary-nav').contains('Browse')
+        return cy.get('.dropdown').contains('Browse')
     }
 
     allLink(){
