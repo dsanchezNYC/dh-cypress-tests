@@ -6,6 +6,8 @@ export class HomePage {
         cy.visit('https://www.daily-harvest.com/')
     }
 
+    //Header locators
+
     browseLink(){
         return cy.get('.dropdown').contains('Browse')
     }
@@ -54,10 +56,6 @@ export class HomePage {
         return cy.get('.px-32 > svg')
     } 
 
-    dailyHarvestDescription(){
-        return cy.get('.display-1')
-    }
-
     loginLink(){
         return cy.get('.secondary-nav').contains('Login')
     }
@@ -68,6 +66,26 @@ export class HomePage {
 
     getStartedLink(){
         return cy.get('.secondary-nav').contains('Get Started')
+    }
+
+    // "Above the fold" locators
+
+    titleText(){
+        return cy.get('.display-1')
+    }
+
+    subTitleText(){
+        return cy.get('.card-img-overlay > :nth-child(2) > .mb-24')
+    }
+
+    getStartedButton(){
+        return cy.get('.card-img-overlay > :nth-child(3) > .btn')
+    }
+
+    // "Below the fold" locators 
+
+    secondaryTitleText(){
+        return cy.get(':nth-child(3) > .d-block > .text-center')
     }
 
 }

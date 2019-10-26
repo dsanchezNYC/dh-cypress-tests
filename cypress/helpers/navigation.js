@@ -1,7 +1,4 @@
 export class NavigationLinks {
-
-    // Add locators for standard navigation links for .primary-nav .secondary-nav
-    // Instead of having same locators in different page objects
     
     browseLink(){
         return cy.get('.primary-nav').contains('Browse')
@@ -51,22 +48,20 @@ export class NavigationLinks {
         return cy.get('.px-32 > svg')
     } 
 
-    dailyHarvestDescription(){
-        return cy.get('.display-1')
+    helpLink(){
+        return cy.get('.secondary-nav').contains('Help')
     }
 
     loginLink(){
         return cy.get('.secondary-nav').contains('Login')
     }
 
-    helpLink(){
-        return cy.get('.secondary-nav').contains('Help')
-    }
-
     getStartedLink(){
         return cy.get('.secondary-nav').contains('Get Started')
     }
 
-
+    kustomerAppIcon(){
+        return cy.get('.kustomer-app-icon > div')
+    }
 
 }
