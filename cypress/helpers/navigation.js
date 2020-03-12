@@ -1,11 +1,15 @@
 export class NavigationLinks {
     
+    browse(Value){
+        return cy.get('div > [href="/app/' + Value + '"]')
+    }
+
     browseLink(){
-        return cy.get('.primary-nav').contains('Browse')
+        return cy.get('.dropdown').contains('Browse')
     }
 
     allLink(){
-        return cy.get('.primary-nav').contains('All')
+        return cy.get('.dropdown').contains('All')
     }
 
     smoothiesLink(){

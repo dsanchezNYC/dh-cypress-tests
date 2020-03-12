@@ -10,9 +10,9 @@ describe('Login Page tests', () => {
     const hp = new HomePage
     const lp = new LoginPage
     
-    describe('Smoke tests', () => {
+    describe('Sanity tests', () => {
 
-    it('Login page displayed successfully', () => {
+    it('Page displayed successfully', () => {
         lp.visitLoginPage()
         lp.browseLink().should('be.visible')
         lp.allLink().should('not.be.visible')
@@ -36,20 +36,20 @@ describe('Login Page tests', () => {
         lp.passwordField().should('be.visible').should('be.enabled')
     })
 
-    it('Login page Remember Me checkbox loads successfully', () => {
+    it('Remember Me checkbox loads successfully', () => {
         lp.rememberMeText().should('be.visible').should('have.text', 'Remember Me')
         lp.rememberMeCheckbox().should('be.visible').should('not.be.checked')
     })
 
-    it('Login page Forgot your password? link loads successfully', () => {
+    it('Forgot your password? link loads successfully', () => {
         lp.forgotYourPasswordLink().should('be.visible')
     })
 
-    it('Login page Login button loads successfully', () => {
+    it('Login button loads successfully', () => {
         lp.loginButton().should('be.visible')
     })
 
-    it('Login page Sign Up text and link loads successfully', () => {
+    it('Sign Up text and link loads successfully', () => {
         lp.signUpText().should('be.visible').should('have.text', 'Don\'t have an account? Sign Up.')
         lp.signUpLink().should('be.visible')
     })
@@ -76,11 +76,11 @@ describe('Navigation tests', () => {
         
     })
 
-    it('User can navigate to Sign Up page successfully', () => {
-        lp.signUpLink().should('be.visible').click()
-        sup.signUpPageTitle().should('be.visible').should('have.text', 'WE TAKE CARE OF FOOD, SO FOOD CAN TAKE CARE OF YOU')
-        sup.signUpPageDescription().should('be.visible').should('have.text', 'Find out if we deliver to your zip code')
-    })
+    // it('User can navigate to Sign Up page successfully', () => {
+    //     lp.signUpLink().should('be.visible').click()
+    //     sup.signUpPageTitle().should('be.visible').should('have.text', 'WE TAKE CARE OF FOOD, SO FOOD CAN TAKE CARE OF YOU')
+    //     sup.signUpPageDescription().should('be.visible').should('have.text', 'Find out if we deliver to your zip code')
+    // })
 
     // it('User sees error message for invalid credentials', () => {
     //     lp.loginButton().should('be.visible').click()

@@ -7,9 +7,9 @@ describe('Help Page tests', () => {
 
     const hp = new HelpPage
 
-    describe('Smoke tests', () => {
+    describe('Sanity tests', () => {
 
-    it('Help page displayed successfully', () => {
+    it('Page displayed successfully', () => {
         hp.visitHelpPage()
         hp.browseLink().should('be.visible')
         hp.whoWeAreLink().should('be.visible')

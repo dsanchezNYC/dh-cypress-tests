@@ -15,9 +15,9 @@ describe('Home Page tests', () => {
     const sp = new SmoothiesPage
     const nav = new NavigationLinks
     
-    describe('Smoke tests', () => {
+    describe('Sanity tests', () => {
 
-    it('Home page displayed successfully', () => {
+    it('Page displayed successfully', () => {
         hp.visitHomePage()
         nav.browseLink().should('be.visible')
         nav.allLink().should('not.be.visible')
@@ -48,18 +48,18 @@ describe('Home Page tests', () => {
         hp.visitHomePage()
     })
 
-    it('Navigate to Browse page', () => {
-        nav.browseLink().should('be.visible').click()
-        nav.allLink().should('be.visible').click({ force: true })
-        bp.bestSellersTitle().should('be.visible').should('contain.text', 'Best Sellers')
-    })
+    // it.only('Navigate to Browse page', () => {
+    //     nav.browseLink().should('be.visible').click()
+    //     nav.allLink().should('be.visible').click({ force: true })
+    //     bp.bestSellersTitle().should('be.visible').should('contain.text', 'Best Sellers')
+    // })
 
-    it('Navigate to Smoothies page', () => {
-        nav.browseLink().should('be.visible').click()
-        nav.smoothiesLink().should('be.visible').click({ force: true })
-        sp .smoothiesTitle().should('be.visible').should('have.text', 'One Cup Wonder')
-        sp.smoothiesDescription().should('be.visible').should('have.text', 'That full-night\'s-sleep energy, post-yoga bliss, feel-good glow now comes in smoothies you’ll crave morning, noon and night. Ready in seconds, blended to perfection, and seriously good for you - dreams do come true.')
-    })
+    // it('Navigate to Smoothies page', () => {
+    //     nav.browseLink().should('be.visible').click()
+    //     nav.smoothiesLink().should('be.visible').click({ force: true })
+    //     sp .smoothiesTitle().should('be.visible').should('have.text', 'One Cup Wonder')
+    //     sp.smoothiesDescription().should('be.visible').should('have.text', 'That full-night\'s-sleep energy, post-yoga bliss, feel-good glow now comes in smoothies you’ll crave morning, noon and night. Ready in seconds, blended to perfection, and seriously good for you - dreams do come true.')
+    // })
 
     it('Navigate to Login page', () => {
         hp.loginLink().should('be.visible').click({ force: true })
