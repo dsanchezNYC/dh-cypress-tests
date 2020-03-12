@@ -17,7 +17,7 @@ describe('Home Page tests', () => {
     
     describe('Smoke tests', () => {
 
-    it.only('Home page displayed successfully', () => {
+    it('Home page displayed successfully', () => {
         hp.visitHomePage()
         nav.browseLink().should('be.visible')
         nav.allLink().should('not.be.visible')
@@ -36,8 +36,8 @@ describe('Home Page tests', () => {
         nav.getStartedLink().should('be.visible')
         hp.titleText().should('be.visible')
         hp.subTitleText().should('be.visible')
-        hp.getStartedButton().should('be.visible').should('have.text', 'Get Started')
-        hp.secondaryTitleText().should('be.visible')
+        //hp.getStartedButton().should('be.visible').should('have.text', 'Get Started')
+        //hp.secondaryTitleText().should('be.visible')
    })
 
 })
