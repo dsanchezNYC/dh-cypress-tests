@@ -11,6 +11,9 @@ workflows:
   build:
     jobs:
       - cypress/run: # "run" job comes from "cypress" orb
+        docker:
+        - image: circleci/<language>:<version TAG>
+        parallelism: 4
           executor: cypress/browsers-chrome69
           browser: chrome 
       
