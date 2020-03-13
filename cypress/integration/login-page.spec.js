@@ -56,37 +56,4 @@ describe('Login Page tests', () => {
 
 })
 
-describe('Navigation tests', () => {
-    
-    const lp = new LoginPage
-    const pwrp = new PwResetPage
-    const sup = new SignUpPage
-
-    beforeEach(() => {
-        hp.visitHomePage()
-        cy.wait(2000)
-        hp.loginLink().should('be.visible').click()
-        lp.dailyHarvestLogo().should('be.visible')
-    })
-
-    it('User can navigate to Forgot Password page successfully', () => {
-        lp.forgotYourPasswordLink().should('be.visible').click()
-        pwrp.passwordResetTitle().should('be.visible').should('have.text', 'Password Reset')
-        pwrp.passwordResetDescription().should('be.visible').should('have.text', 'Enter your email address, and we will send you password reset instructions.')
-        
-    })
-
-    // it('User can navigate to Sign Up page successfully', () => {
-    //     lp.signUpLink().should('be.visible').click()
-    //     sup.signUpPageTitle().should('be.visible').should('have.text', 'WE TAKE CARE OF FOOD, SO FOOD CAN TAKE CARE OF YOU')
-    //     sup.signUpPageDescription().should('be.visible').should('have.text', 'Find out if we deliver to your zip code')
-    // })
-
-    // it('User sees error message for invalid credentials', () => {
-    //     lp.loginButton().should('be.visible').click()
-    //     cy.get('flash-notifications').should('contain', ' Error: Invalid login credentials. ')
-    // })
-
-})
-
 })
