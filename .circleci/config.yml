@@ -10,9 +10,6 @@ orbs:
 workflows:
   build:
     jobs:
-    docker:
-        - image: circleci/<language>:<version TAG>
-        parallelism: 4
       - cypress/run: # "run" job comes from "cypress" orb        
           executor: cypress/browsers-chrome69
           browser: chrome 
@@ -25,9 +22,9 @@ workflows:
             branches:
               only:
                 - master
-    jobs:
-      - cypress/run: # "run" job comes from "cypress" orb
-          executor: cypress/browsers-chrome69
-          browser: chrome
+    # jobs:
+    #   - cypress/run: # "run" job comes from "cypress" orb
+    #       executor: cypress/browsers-chrome69
+    #       browser: chrome
 
 
