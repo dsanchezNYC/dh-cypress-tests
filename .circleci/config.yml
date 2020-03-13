@@ -4,7 +4,7 @@ jobs:
   cypress/run:
     docker:
     - image: cypress/browsers:chrome69
-    parallelism: 3
+    parallelism: 4
     environment:
     - CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
     steps:
