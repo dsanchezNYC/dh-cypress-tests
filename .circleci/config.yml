@@ -11,7 +11,7 @@ workflows:
   build:
     jobs:
       - cypress/run: # "run" job comes from "cypress" orb
-          executor: cypress/browsers-chrome67
+          executor: cypress/browsers-chrome69
           browser: chrome 
       
   nightly: 
@@ -24,7 +24,7 @@ workflows:
                 - master
     jobs:
       - cypress/run: # "run" job comes from "cypress" orb
-          executor: cypress/browsers-chrome67
+          executor: cypress/browsers-chrome69
           browser: chrome
 
 
