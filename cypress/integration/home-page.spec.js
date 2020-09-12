@@ -35,9 +35,6 @@ describe('Home Page tests', () => {
         nav.loginLink().should('be.visible')
         nav.getStartedLink().should('be.visible')
         hp.titleText().should('be.visible')
-        hp.subTitleText().should('be.visible')
-        //hp.getStartedButton().should('be.visible').should('have.text', 'Get Started')
-        //hp.secondaryTitleText().should('be.visible')
    })
 
 })
